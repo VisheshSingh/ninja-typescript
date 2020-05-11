@@ -44,3 +44,50 @@ ninja = {
   age: 12,
   // skills: ['scare with hiyaa'] -> cannot add new properties
 };
+
+// explicit types
+let char: string;
+let num: number;
+let isLoggedIn: boolean;
+
+char = 'mario'; // allowed
+// char = 30; // not allowed
+
+num = 20; // allowed
+// num = true; // not allowed
+
+isLoggedIn = true; // allowed
+// isLoggedIn = 'hey!' // not allowed
+
+// For arrays
+let luckyNums: number[] = [];
+luckyNums = [3, 7, 9];
+luckyNums = [5, 6, 'mario']; // not allowed
+
+// Union types
+let allMixed: (string | number)[] = [];
+allMixed.push('mario');
+allMixed.push(90);
+// allMixed.push(false); // not allowed
+
+// For Objects
+let ninjaOne: object;
+ninjaOne = {
+  name: 'peter',
+  belt: 'black',
+  age: 25,
+};
+
+let ninjaTwo: {
+  name: string;
+  belt: string;
+  age: number;
+  isActive: boolean;
+};
+
+ninjaTwo = {
+  name: 'roy',
+  belt: 'orange',
+  age: 21,
+  isActive: false,
+};
