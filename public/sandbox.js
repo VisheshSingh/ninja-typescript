@@ -1,3 +1,4 @@
+"use strict";
 var character = 'mario';
 var isActive = false;
 var luckyNumber = 7;
@@ -23,7 +24,7 @@ mixed.push('peach');
 var ninja = {
     name: 'shaun',
     belt: 'brown',
-    age: 15
+    age: 15,
 };
 // ninja.skills = ['chop', 'throw sharp objs']; cannot add extra properties
 ninja.belt = 'black'; // can update the property with the same type
@@ -31,7 +32,7 @@ ninja.belt = 'black'; // can update the property with the same type
 ninja = {
     name: 'v-boy',
     belt: 'white',
-    age: 12
+    age: 12,
 };
 // explicit types
 var char;
@@ -57,14 +58,14 @@ var ninjaOne;
 ninjaOne = {
     name: 'peter',
     belt: 'black',
-    age: 25
+    age: 25,
 };
 var ninjaTwo;
 ninjaTwo = {
     name: 'roy',
     belt: 'orange',
     age: 21,
-    isActive: false
+    isActive: false,
 };
 // DYNAMIC TYPES
 var age = 25;
@@ -82,3 +83,4 @@ newNinja = { name: 25, age: 'mario' };
 console.log(newNinja);
 newNinja = { name: 'mario', age: 25 };
 console.log(newNinja);
+console.log('tsconfig');
