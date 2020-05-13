@@ -111,4 +111,4 @@ newNinja = { name: 25, age: 'mario' };
 console.log(newNinja);
 newNinja = { name: 'mario', age: 25 };
 console.log(newNinja);
-console.log('tsconfig');
+console.log('testing 123');
