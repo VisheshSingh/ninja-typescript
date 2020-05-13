@@ -62,7 +62,7 @@ isLoggedIn = true; // allowed
 // For arrays
 let luckyNums: number[] = [];
 luckyNums = [3, 7, 9];
-luckyNums = [5, 6, 'mario']; // not allowed
+// luckyNums = [5, 6, 'mario']; // not allowed
 
 // Union types
 let allMixed: (string | number)[] = [];
@@ -91,3 +91,23 @@ ninjaTwo = {
   age: 21,
   isActive: false,
 };
+
+// DYNAMIC TYPES
+let age: any = 25;
+
+age = true;
+console.log(age);
+age = 'mario';
+console.log(age);
+
+let mixedArr: any[] = [];
+mixedArr.push(5);
+mixedArr.push(false);
+mixedArr.push('luigi');
+console.log(mixedArr);
+
+let newNinja: { name: any; age: any };
+newNinja = { name: 25, age: 'mario' };
+console.log(newNinja);
+newNinja = { name: 'mario', age: 25 };
+console.log(newNinja);
