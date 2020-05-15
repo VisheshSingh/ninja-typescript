@@ -84,3 +84,29 @@ console.log(newNinja);
 newNinja = { name: 'mario', age: 25 };
 console.log(newNinja);
 console.log('testing 123');
+// FUNCTION TYPES
+var add = function (a, b) {
+    return a + b;
+};
+add(10, 5);
+var minus = function (a, b, c) {
+    console.log(a - b);
+    console.log(c);
+};
+minus(10, 5);
+var logDetails = function (uid, item) {
+    console.log(item + " found with id " + uid);
+};
+logDetails(101, 'vboy');
+var greet = function (user) {
+    console.log(user.name + " says hello!");
+};
+greet({ name: 'ninja', uid: 501 });
+var greetAgain = function (user) {
+    console.log(user.uid + " " + user.name + " says hola!");
+};
+greetAgain({ name: 'Steve', uid: '505' });
+var andAgain = function (user) {
+    console.log(user.uid + " " + user.name + " says namaste!");
+};
+andAgain({ name: 'Peter', uid: 123 });

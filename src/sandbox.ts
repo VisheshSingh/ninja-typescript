@@ -126,3 +126,31 @@ const minus = (a: number, b: number, c?: number | string): void => {
 };
 
 minus(10, 5);
+
+// TYPE ALIASES
+type stringOrNum = string | number;
+type objWithStringNum = { name: string; uid: stringOrNum };
+
+const logDetails = (uid: stringOrNum, item: string): void => {
+  console.log(`${item} found with id ${uid}`);
+};
+
+logDetails(101, 'vboy');
+
+const greet = (user: { name: string; uid: stringOrNum }) => {
+  console.log(`${user.name} says hello!`);
+};
+
+greet({ name: 'ninja', uid: 501 });
+
+const greetAgain = (user: objWithStringNum) => {
+  console.log(`${user.uid} ${user.name} says hola!`);
+};
+
+greetAgain({ name: 'Steve', uid: '505' });
+
+const andAgain = (user: objWithStringNum) => {
+  console.log(`${user.uid} ${user.name} says namaste!`);
+};
+
+andAgain({ name: 'Peter', uid: 123 });
