@@ -154,3 +154,25 @@ const andAgain = (user: objWithStringNum) => {
 };
 
 andAgain({ name: 'Peter', uid: 123 });
+
+// FUNCTION SIGNATURES
+let calc: (a: number, b: number, c: string) => number;
+
+calc = (numOne: number, numTwo: number, action: string) => {
+  if (action === 'add') {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
+};
+
+calc(5, 10, 'add');
+
+type person = { name: string; age: number };
+let man: (obj: { name: string; age: number }) => void;
+
+man = (ninja: person) => {
+  console.log(`${ninja.name} ${ninja.age}`);
+};
+
+man({ name: 'shaun', age: 30 });
