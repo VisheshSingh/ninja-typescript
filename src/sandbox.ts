@@ -15,7 +15,7 @@ const circleArea = (diameter: number) => {
   return diameter * Math.PI;
 };
 
-console.log('Area of 🔵: ', circleArea(5));
+// console.log('Area of 🔵: ', circleArea(5));
 
 // Arrays
 const names = ['mario', 'luigi', 'peach'];
@@ -96,22 +96,22 @@ ninjaTwo = {
 let age: any = 25;
 
 age = true;
-console.log(age);
+// console.log(age);
 age = 'mario';
-console.log(age);
+// console.log(age);
 
 let mixedArr: any[] = [];
 mixedArr.push(5);
 mixedArr.push(false);
 mixedArr.push('luigi');
-console.log(mixedArr);
+// console.log(mixedArr);
 
 let newNinja: { name: any; age: any };
 newNinja = { name: 25, age: 'mario' };
-console.log(newNinja);
+// console.log(newNinja);
 newNinja = { name: 'mario', age: 25 };
-console.log(newNinja);
-console.log('testing 123');
+// console.log(newNinja);
+// console.log('testing 123');
 
 // FUNCTION TYPES
 const add = (a: number, b: number): number => {
@@ -121,8 +121,8 @@ const add = (a: number, b: number): number => {
 add(10, 5);
 
 const minus = (a: number, b: number, c?: number | string): void => {
-  console.log(a - b);
-  console.log(c);
+  // console.log(a - b);
+  // console.log(c);
 };
 
 minus(10, 5);
@@ -132,25 +132,25 @@ type stringOrNum = string | number;
 type objWithStringNum = { name: string; uid: stringOrNum };
 
 const logDetails = (uid: stringOrNum, item: string): void => {
-  console.log(`${item} found with id ${uid}`);
+  // console.log(`${item} found with id ${uid}`);
 };
 
 logDetails(101, 'vboy');
 
 const greet = (user: { name: string; uid: stringOrNum }) => {
-  console.log(`${user.name} says hello!`);
+  // console.log(`${user.name} says hello!`);
 };
 
 greet({ name: 'ninja', uid: 501 });
 
 const greetAgain = (user: objWithStringNum) => {
-  console.log(`${user.uid} ${user.name} says hola!`);
+  // console.log(`${user.uid} ${user.name} says hola!`);
 };
 
 greetAgain({ name: 'Steve', uid: '505' });
 
 const andAgain = (user: objWithStringNum) => {
-  console.log(`${user.uid} ${user.name} says namaste!`);
+  // console.log(`${user.uid} ${user.name} says namaste!`);
 };
 
 andAgain({ name: 'Peter', uid: 123 });
@@ -172,7 +172,7 @@ type person = { name: string; age: number };
 let man: (obj: { name: string; age: number }) => void;
 
 man = (ninja: person) => {
-  console.log(`${ninja.name} ${ninja.age}`);
+  // console.log(`${ninja.name} ${ninja.age}`);
 };
 
 man({ name: 'shaun', age: 30 });
