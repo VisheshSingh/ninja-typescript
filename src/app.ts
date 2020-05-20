@@ -1,14 +1,14 @@
 // classes
 class Invoice {
-  amount: number;
-  client: string;
-  details: string;
+  //   readonly amount: number;
+  //   private client: string;
+  //   public details: string;
 
-  constructor(c: string, d: string, a: number) {
-    this.client = c;
-    this.details = d;
-    this.amount = a;
-  }
+  constructor(
+    private client: string,
+    public details: string,
+    readonly amount: number
+  ) {}
 
   format() {
     console.log(`${this.client} owes $${this.amount} for ${this.details}`);
@@ -22,7 +22,9 @@ const invoices: Invoice[] = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 
-console.log(invoices);
+invoices.forEach((inv) => {
+  console.log(`${inv.client}, ${inv.details}, ${inv.amount}, ${inv.format()}`);
+});
 
 const anchor = document.querySelector('a')!;
 console.log(anchor.href);
