@@ -1,5 +1,7 @@
+import { HasFormatter } from './HasFormatter';
+
 // classes
-export class Invoice {
+export class Invoice implements HasFormatter {
   constructor(
     private client: string,
     public details: string,

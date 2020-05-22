@@ -1,14 +1,25 @@
 import { Invoice } from './classes/Invoice.js';
-const invOne = new Invoice('mario', 'new website for mario', 200);
+import { Payment } from './classes/Payment.js';
+let docOne;
+let docTwo;
+docOne = new Invoice('peach', 'cleaning palace', 100);
+docTwo = new Payment('geodude', 'fight', 400);
+const docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log('docs 📂: ', docs);
+/* const invOne = new Invoice('mario', 'new website for mario', 200);
 const invTwo = new Invoice('luigi', 'new website for luigi', 300);
-const invoices = [];
+
+const invoices: Invoice[] = [];
 invoices.push(invOne);
 invoices.push(invTwo);
+
 invoices.forEach((inv) => {
-    console.log(`${inv.details}, ${inv.amount}, ${inv.format()}`);
-});
-const anchor = document.querySelector('a');
-console.log(anchor.href);
+  console.log(`${inv.details}, ${inv.amount}, ${inv.format()}`);
+}); */
+/* const anchor = document.querySelector('a')!;
+console.log(anchor.href); */
 // const form = document.querySelector('form');
 const form = document.querySelector('.new-item-form');
 // console.log(form.children);
@@ -19,21 +30,40 @@ const details = document.querySelector('#details');
 const amount = document.querySelector('#amount');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+    let docs;
+    if (type.value === 'invoice') {
+        docs = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        docs = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(docs);
 });
-const me = {
-    name: 'batman',
-    age: 30,
-    speak(text) {
-        console.log(`I am batman`);
-    },
-    spend(money) {
-        console.log(`I spent ${money}`);
-        return money;
-    },
+//interfaces
+/* interface isPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
+
+const me: isPerson = {
+  name: 'batman',
+  age: 30,
+  speak(text: string): void {
+    console.log(`I am batman`);
+  },
+  spend(money: number) {
+    console.log(`I spent ${money}`);
+    return money;
+  },
 };
+
 console.log({ me });
-const greetPerson = (person) => {
-    console.log(`hello ${person.name}`);
+
+const greetPerson = (person: isPerson) => {
+  console.log(`hello ${person.name}`);
 };
+
 greetPerson(me);
+ */

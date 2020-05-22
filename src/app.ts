@@ -1,6 +1,20 @@
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './classes/HasFormatter.js';
 
-const invOne = new Invoice('mario', 'new website for mario', 200);
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice('peach', 'cleaning palace', 100);
+docTwo = new Payment('geodude', 'fight', 400);
+
+const docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
+
+console.log('docs 📂: ', docs);
+
+/* const invOne = new Invoice('mario', 'new website for mario', 200);
 const invTwo = new Invoice('luigi', 'new website for luigi', 300);
 
 const invoices: Invoice[] = [];
@@ -9,10 +23,10 @@ invoices.push(invTwo);
 
 invoices.forEach((inv) => {
   console.log(`${inv.details}, ${inv.amount}, ${inv.format()}`);
-});
+}); */
 
-const anchor = document.querySelector('a')!;
-console.log(anchor.href);
+/* const anchor = document.querySelector('a')!;
+console.log(anchor.href); */
 
 // const form = document.querySelector('form');
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
@@ -26,13 +40,19 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  let docs: HasFormatter;
 
-  console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+  if (type.value === 'invoice') {
+    docs = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+  } else {
+    docs = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+  }
+  console.log(docs);
 });
 
 //interfaces
 
-interface isPerson {
+/* interface isPerson {
   name: string;
   age: number;
   speak(a: string): void;
@@ -58,3 +78,4 @@ const greetPerson = (person: isPerson) => {
 };
 
 greetPerson(me);
+ */
