@@ -1,8 +1,9 @@
+import { ListTemplate } from './classes/ListTemplate.js';
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
-import { HasFormatter } from './classes/HasFormatter.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
 
-let docOne: HasFormatter;
+/* let docOne: HasFormatter;
 let docTwo: HasFormatter;
 
 docOne = new Invoice('peach', 'cleaning palace', 100);
@@ -12,23 +13,10 @@ const docs: HasFormatter[] = [];
 docs.push(docOne);
 docs.push(docTwo);
 
-console.log('docs 📂: ', docs);
+console.log('docs 📂: ', docs); */
+const ul = document.querySelector('ul')!;
+const list = new ListTemplate(ul);
 
-/* const invOne = new Invoice('mario', 'new website for mario', 200);
-const invTwo = new Invoice('luigi', 'new website for luigi', 300);
-
-const invoices: Invoice[] = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-
-invoices.forEach((inv) => {
-  console.log(`${inv.details}, ${inv.amount}, ${inv.format()}`);
-}); */
-
-/* const anchor = document.querySelector('a')!;
-console.log(anchor.href); */
-
-// const form = document.querySelector('form');
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 // console.log(form.children);
 
@@ -47,7 +35,10 @@ form.addEventListener('submit', (e) => {
   } else {
     docs = new Payment(toFrom.value, details.value, amount.valueAsNumber);
   }
-  console.log(docs);
+  list.render(docs, details.value, 'start');
+  toFrom.value = '';
+  details.value = '';
+  amount.value = '';
 });
 
 //interfaces

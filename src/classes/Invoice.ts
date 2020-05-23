@@ -1,4 +1,4 @@
-import { HasFormatter } from './HasFormatter';
+import { HasFormatter } from '../interfaces/HasFormatter';
 
 // classes
 export class Invoice implements HasFormatter {
@@ -9,6 +9,6 @@ export class Invoice implements HasFormatter {
   ) {}
 
   format() {
-    console.log(`${this.client} owes $${this.amount} for ${this.details}`);
+    return `${this.client} owes $${this.amount} for ${this.details}`;
   }
 }
