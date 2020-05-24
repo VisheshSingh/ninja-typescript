@@ -126,3 +126,19 @@ man = (ninja) => {
     // console.log(`${ninja.name} ${ninja.age}`);
 };
 man({ name: 'shaun', age: 30 });
+// Generics
+const addId = (obj) => {
+    const uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+console.log(addId({ name: 'vboy', age: 20 }));
+const dacOne = {
+    name: 'vboy',
+    age: 23,
+    data: 'information',
+};
+const dacTwo = {
+    name: 'vboy',
+    age: 23,
+    data: { occupation: 'poet' },
+};

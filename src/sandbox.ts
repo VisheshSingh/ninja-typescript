@@ -176,3 +176,29 @@ man = (ninja: person) => {
 };
 
 man({ name: 'shaun', age: 30 });
+
+// Generics
+const addId = <T extends { name: string }>(obj: T) => {
+  const uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+console.log(addId({ name: 'vboy', age: 20 }));
+
+interface Resource<T> {
+  name: string;
+  age: number;
+  data: T;
+}
+
+const dacOne: Resource<string> = {
+  name: 'vboy',
+  age: 23,
+  data: 'information',
+};
+
+const dacTwo: Resource<object> = {
+  name: 'vboy',
+  age: 23,
+  data: { occupation: 'poet' },
+};
