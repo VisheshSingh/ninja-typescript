@@ -24,11 +24,13 @@ const amount = document.querySelector('#amount');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let docs;
+    let values;
+    values = [toFrom.value, details.value, amount.valueAsNumber];
     if (type.value === 'invoice') {
-        docs = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+        docs = new Invoice(...values);
     }
     else {
-        docs = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+        docs = new Payment(...values);
     }
     list.render(docs, details.value, 'start');
     toFrom.value = '';

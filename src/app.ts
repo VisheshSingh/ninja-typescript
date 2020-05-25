@@ -29,11 +29,13 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   let docs: HasFormatter;
+  let values: [string, string, number];
+  values = [toFrom.value, details.value, amount.valueAsNumber];
 
   if (type.value === 'invoice') {
-    docs = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    docs = new Invoice(...values);
   } else {
-    docs = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    docs = new Payment(...values);
   }
   list.render(docs, details.value, 'start');
   toFrom.value = '';
