@@ -185,20 +185,34 @@ const addId = <T extends { name: string }>(obj: T) => {
 
 console.log(addId({ name: 'vboy', age: 20 }));
 
+// ENUMS - Descriptive constants
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+}
+
 interface Resource<T> {
   name: string;
+  resourceType: ResourceType;
   age: number;
   data: T;
 }
 
-const dacOne: Resource<string> = {
+const dacOne: Resource<string[]> = {
   name: 'vboy',
+  resourceType: ResourceType.AUTHOR,
   age: 23,
-  data: 'information',
+  data: ['yoshi', 'mario', 'Tatsu'],
 };
 
 const dacTwo: Resource<object> = {
   name: 'vboy',
+  resourceType: ResourceType.PERSON,
   age: 23,
   data: { occupation: 'poet' },
 };
+
+console.log({ dacOne, dacTwo });

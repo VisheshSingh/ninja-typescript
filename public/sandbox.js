@@ -132,13 +132,25 @@ const addId = (obj) => {
     return Object.assign(Object.assign({}, obj), { uid });
 };
 console.log(addId({ name: 'vboy', age: 20 }));
+// ENUMS - Descriptive constants
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
 const dacOne = {
     name: 'vboy',
+    resourceType: ResourceType.AUTHOR,
     age: 23,
-    data: 'information',
+    data: ['yoshi', 'mario', 'Tatsu'],
 };
 const dacTwo = {
     name: 'vboy',
+    resourceType: ResourceType.PERSON,
     age: 23,
     data: { occupation: 'poet' },
 };
+console.log({ dacOne, dacTwo });
